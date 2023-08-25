@@ -2,7 +2,6 @@ import GetAllPrograms from "@/lib/getAllPrograms";
 
 export default async function Programs() {
   const programData = await GetAllPrograms();
-  console.log("프로그램 데이터", programData);
 
   return (
     <main className="w-full bg-componentBg">

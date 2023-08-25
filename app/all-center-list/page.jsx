@@ -1,5 +1,6 @@
 import CenterNameInAll from "@/components/centerNameInAll";
 import getAllCenterList from "@/lib/getAllCenterList";
+import getSpecificProgramData from "@/lib/getSpecificProgramData";
 
 export default async function AllCenterList() {
   const centerList = await getAllCenterList();

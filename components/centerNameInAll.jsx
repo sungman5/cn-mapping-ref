@@ -1,6 +1,6 @@
 "use client";
 
-import GetMetaData from "@/lib/getMetaData";
+import getCenterAndPrograms from "@/lib/getCenterAndPrograms";
 import { useCnStore } from "@/store/store";
 import { useEffect } from "react";
 
@@ -13,7 +13,7 @@ export default function CenterNameInAll({ element }) {
 
   async function clickCenterName() {
     openCenterDetailPage();
-    const fetchCenterDetailData = await GetMetaData(element.id);
+    const fetchCenterDetailData = await getCenterAndPrograms(element.id);
     setIsSelectedCenterData(fetchCenterDetailData);
   }
 
