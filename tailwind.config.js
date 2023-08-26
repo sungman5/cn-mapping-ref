@@ -28,6 +28,11 @@ module.exports = {
         'componentBg' : '#E9ECEF',
         'defaultBlack' : '#424242',
       },
+      screens: {
+        '2xl' : '1536px',
+        '3xl' : '1920px',
+        '4xl' : '2560px',
+      }
     },
   },
   plugins: [],

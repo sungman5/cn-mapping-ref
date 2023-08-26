@@ -8,18 +8,18 @@ export default function CenterDetailPage() {
   const { isCenterDetailOpen, closeCenterDetailPage, isSelectedCenterData } = useCnStore();
 
   return (
-    <div className={`${isCenterDetailOpen === false ? "hidden" : "flex md:flex-row"} h-full flex-col w-[768px] bg-componentBg`}>
-      <section className="flex flex-col flex-1 h-full border-r border-r-slate-200">
+    <div className={`${isCenterDetailOpen === false ? "hidden" : "flex xl:flex-row"} flex-col w-full text-sm 3xl:text-base xl:w-[640px] 4xl:w-[768px] bg-componentBg`}>
+      <section className="flex flex-col border-r xl:flex-1 h-fit xl:h-full border-r-slate-200">
         <div
           onClick={() => {
             closeCenterDetailPage();
           }}
-          className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary md:h-16 border-b-slate-200"
+          className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary xl:h-16 border-b-slate-200"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
           </svg>
-          <h2 className="text-xl font-bold tracking-normal font-NotoSansKR">{isSelectedCenterData.title}</h2>
+          <h2 className="text-base font-bold tracking-normal xl:text-xl font-NotoSansKR">{isSelectedCenterData.title}</h2>
         </div>
 
         <div className="flex flex-col flex-1 gap-6 p-8 bg-white">
@@ -39,7 +39,7 @@ export default function CenterDetailPage() {
             <p className="mb-1 font-bold tracking-normal font-NotoSansKR">대표메일</p>
             <p>{isSelectedCenterData.email || "-"}</p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-4 3xl:flex-row">
             <Link
               href={isSelectedCenterData.center_website || "#"}
               target="_blank"
@@ -80,10 +80,10 @@ export default function CenterDetailPage() {
         </div>
       </section>
 
-      <section className="flex-1 overflow-y-auto border-r shadow-md border-r-slate-200">
-        <div className="sticky top-0 flex items-center justify-between h-12 gap-2 px-4 bg-white border-b md:h-16 border-b-slate-200">
+      <section className="flex-1 overflow-y-auto border-t border-r shadow-md border-t-slate-200 xl:border-t-0 xl:border-b-0 border-r-slate-200">
+        <div className="sticky top-0 flex items-center justify-between h-12 gap-2 px-4 bg-white border-b xl:h-16 border-b-slate-200">
           <div className="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 xl:w-5 xl:h-5">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

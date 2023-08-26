@@ -7,13 +7,13 @@ export default function ProgramDetailPage() {
   const meta = isSelectedProgramData.program_metadata;
   const center = isSelectedProgramData.center_info;
   return (
-    <div className={`${isProgramDetailPageOpen === false ? "hidden" : "flex md:flex-row"} h-full flex-col w-96 bg-componentBg`}>
+    <div className={`${isProgramDetailPageOpen === false ? "hidden" : "flex xl:flex-row"} h-full flex-col w-96 bg-componentBg`}>
       <section className="flex flex-col flex-1 h-full border-r border-r-slate-200">
         <div
           onClick={() => {
             closeProgramDetailPage();
           }}
-          className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary md:h-16 border-b-slate-200"
+          className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary xl:h-16 border-b-slate-200"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />

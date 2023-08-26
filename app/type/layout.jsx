@@ -6,7 +6,7 @@ export default async function TypeLayout(props) {
   console.log("유형?", fetchTypeList);
   return (
     <main className="w-full bg-componentBg">
-      <div className="sticky top-0 px-8 py-3 bg-white border-b md:py-6 border-b-slate-200">
+      <div className="sticky top-0 px-8 py-3 bg-white border-b xl:py-6 border-b-slate-200">
         <div className="flex items-center justify-between mb-4">
           <h2>유형별</h2>
           {/* <p className="text-xs">총 시설</p> */}

@@ -14,7 +14,7 @@ export default function CenterName({ element }) {
 
   return (
     <li
-      className="cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
+      className="cursor-pointer text-base hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
       onClick={() => {
         clickCenterName();
         console.log("클릭!");
