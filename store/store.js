@@ -18,7 +18,12 @@ export const useCnStore = create((set) => ({
   openProgramDetailPage : (value) => set((state) => ({ isProgramDetailPageOpen : true })),
   closeProgramDetailPage : (value) => set((state) => ({ isProgramDetailPageOpen : false })),
 
+  // 선택한 프로그램 데이터 저장
   isSelectedProgramData : {},
   setIsSelectedProgramData: (value) => set((state) => ({ isSelectedProgramData: value })),
 
+
+  // 선택한 지역 
+  isSelectedRegion: '',
+  setIsSelectedRegion: (value) => set((state) => ({ isSelectedRegion: value })),
 }));

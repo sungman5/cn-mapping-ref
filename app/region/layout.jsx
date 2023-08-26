@@ -1,7 +1,7 @@
 import GetAllRegionName from "@/lib/getAllRegionName";
 import Link from "next/link";
 
-export default async function Layout(props) {
+export default async function RegionLayout(props) {
   const regionNameData = await GetAllRegionName();
   console.log(regionNameData);
   return (

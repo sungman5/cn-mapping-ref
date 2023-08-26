@@ -5,6 +5,7 @@ import NavBar from "@/components/nav";
 import CenterDetailPage from "@/components/centerDetailPage";
 import Header from "@/components/header";
 import ProgramDetailPage from "@/components/programDetailPage";
+import CnMap from "@/components/mapping";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,8 +23,10 @@ export default function RootLayout({ children }) {
           {/* 프로그램 상세 목록 컴포넌트 */}
           <CenterDetailPage />
           <ProgramDetailPage />
-          <div className="flex items-center justify-center flex-1 bg-fuchsia-50">
-            <div>맵 위치</div>
+          <div className="flex items-center justify-center flex-1 bg-white">
+            <div>
+              <CnMap />
+            </div>
           </div>
         </div>
       </body>

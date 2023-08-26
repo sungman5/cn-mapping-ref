@@ -5,7 +5,7 @@ import { useCnStore } from "@/store/store";
 
 export default function CenterName({ element }) {
   const { openCenterDetailPage, isSelectedCenterData, setIsSelectedCenterData } = useCnStore();
-  console.log('뭔지보자', element);
+  console.log("뭔지보자", element);
   async function clickCenterName() {
     openCenterDetailPage();
     const fetchCenterDetailData = await getCenterAndPrograms(element.id);
@@ -20,7 +20,7 @@ export default function CenterName({ element }) {
         console.log("클릭!");
       }}
     >
-      {element.title}
+      {element.title || element.name}
     </li>
   );
 }

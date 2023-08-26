@@ -1,7 +1,7 @@
 import GetAllTypeName from "@/lib/getAllTypeName";
 import Link from "next/link";
 
-export default async function Layout(props) {
+export default async function TypeLayout(props) {
   const fetchTypeList = await GetAllTypeName();
   console.log("유형?", fetchTypeList);
   return (
