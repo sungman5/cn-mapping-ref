@@ -2,14 +2,9 @@
 
 import getCenterAndPrograms from "@/lib/getCenterAndPrograms";
 import { useCnStore } from "@/store/store";
-import { useEffect } from "react";
 
-export default function CenterNameInAll({ element }) {
+export default function RegionCenterName({ element }) {
   const { openCenterDetailPage, isSelectedCenterData, setIsSelectedCenterData } = useCnStore();
-
-  useEffect(() => {
-    console.log("선택된 데이터?", isSelectedCenterData);
-  }, [isSelectedCenterData]);
 
   async function clickCenterName() {
     openCenterDetailPage();
@@ -19,14 +14,12 @@ export default function CenterNameInAll({ element }) {
 
   return (
     <li
-      className="cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
       onClick={() => {
         clickCenterName();
-        console.log("클릭!");
-        // openCenterDetailPage();
       }}
+      className="cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
     >
-      {element.name}
+      {element.title}
     </li>
   );
 }

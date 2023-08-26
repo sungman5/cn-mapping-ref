@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavBar from "@/components/nav";
 import CenterDetailPage from "@/components/centerDetailPage";
 import Header from "@/components/header";
+import ProgramDetailPage from "@/components/programDetailPage";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           <section className="w-full overflow-y-auto bg-white border-r md:shadow-lg md:max-w-sm border-r-slate-200">{children}</section>
           {/* 프로그램 상세 목록 컴포넌트 */}
           <CenterDetailPage />
+          <ProgramDetailPage />
           <div className="flex items-center justify-center flex-1 bg-fuchsia-50">
             <div>맵 위치</div>
           </div>

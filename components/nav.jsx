@@ -5,14 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function NavBar() {
-  const { closeCenterDetailPage } = useCnStore();
+  const { closeCenterDetailPage, closeProgramDetailPage } = useCnStore();
+
+  function closeDetailPages(){
+    closeCenterDetailPage();
+    closeProgramDetailPage();
+  }
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 px-4 py-3 bg-white border-r md:p-8 border-r-slate-200 md:relative">
       <ul className="flex justify-around h-full gap-8 md:justify-start md:flex-col">
         <li
           onClick={() => {
-            closeCenterDetailPage();
+            closeDetailPages();
           }}
         >
           <Link className="flex flex-col items-center" href={"/all-center-list"}>
@@ -22,7 +27,7 @@ export default function NavBar() {
         </li>
         <li
           onClick={() => {
-            closeCenterDetailPage();
+            closeDetailPages();
           }}
         >
           <Link className="flex flex-col items-center" href={"/type"}>
@@ -32,7 +37,7 @@ export default function NavBar() {
         </li>
         <li
           onClick={() => {
-            closeCenterDetailPage();
+            closeDetailPages();
           }}
         >
           <Link className="flex flex-col items-center" href={"/region"}>
@@ -42,7 +47,7 @@ export default function NavBar() {
         </li>
         <li
           onClick={() => {
-            closeCenterDetailPage();
+            closeDetailPages();
           }}
         >
           <Link className="flex flex-col items-center" href={"/programs"}>
