@@ -15,7 +15,6 @@ export default async function AllCenterList() {
         {centerList.map((element) => {
           return <CenterName element={element} key={element.id} />;
         })}
-        <li></li>
       </ul>
     </main>
   );

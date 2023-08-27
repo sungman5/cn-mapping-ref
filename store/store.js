@@ -26,4 +26,10 @@ export const useCnStore = create((set) => ({
   // 선택한 지역 
   isSelectedRegion: '',
   setIsSelectedRegion: (value) => set((state) => ({ isSelectedRegion: value })),
+  setIsSelectedRegionInit: (value) => set((state) => ({ isSelectedRegion: '' })),
+
+  // 활성화된 id
+  activeId: null,
+  setActiveId: (value) => set((state) => ({ activeId: value })),
+  setActiveIdInit: (value) => set((state) => ({ activeId: null })),
 }));

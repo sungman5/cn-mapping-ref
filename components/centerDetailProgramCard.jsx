@@ -3,8 +3,7 @@ import { useCnStore } from "@/store/store";
 export default function CenterDetailProgramCard() {
   const { isSelectedCenterData } = useCnStore();
   const programDatas = isSelectedCenterData.referencing_programs;
-  console.log(typeof programDatas);
-
+console.log(isSelectedCenterData)
   return (
     <>
       {programDatas &&
@@ -23,7 +22,7 @@ export default function CenterDetailProgramCard() {
                     />
                   </svg>
                   <p className="text-primary">소개</p>
-                  <p>짚라인 및 모험체험, 위기탈출 넘버원</p>
+                  <p>{element.content}</p>
                 </div>
 
                 <div className="flex items-center gap-2 py-2.5 border-b border-b-slate-200">
@@ -114,7 +113,7 @@ export default function CenterDetailProgramCard() {
                   </svg>
 
                   <p className="text-primary">문의</p>
-                  <p>mail@mail.com</p>
+                  <p>{isSelectedCenterData.center_email}</p>
                 </div>
               </div>
             </div>

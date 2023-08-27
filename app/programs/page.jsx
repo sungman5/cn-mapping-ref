@@ -12,7 +12,6 @@ export default async function Programs() {
       </div>
       <ul className="p-4 overflow-y-auto bg-white component-width">
         {programData.map((element) => {
-          // console.log('엘레멘트', element)
           return <ProgramName key={element.program_id} element={element} />;
         })}
       </ul>

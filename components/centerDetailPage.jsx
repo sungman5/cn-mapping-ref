@@ -37,7 +37,7 @@ export default function CenterDetailPage() {
           </div>
           <div>
             <p className="mb-1 font-bold tracking-normal font-NotoSansKR">대표메일</p>
-            <p>{isSelectedCenterData.email || "-"}</p>
+            <p>{isSelectedCenterData.center_email || "-"}</p>
           </div>
           <div className="flex flex-col gap-4 3xl:flex-row">
             <Link
@@ -96,7 +96,20 @@ export default function CenterDetailPage() {
         </div>
 
         <div className="flex flex-col gap-2 p-2.5">
-          {isSelectedCenterData.referencing_programs_count === 0 ? '프로그램이 없습니다' : <CenterDetailProgramCard />}
+          {isSelectedCenterData.referencing_programs_count === 0 ? (
+            <div className="p-8 overflow-y-auto text-center bg-white rounded ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mx-auto mb-2">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+              <p>프로그램이 없습니다.</p>
+            </div>
+          ) : (
+            <CenterDetailProgramCard />
+          )}
         </div>
       </section>
     </div>

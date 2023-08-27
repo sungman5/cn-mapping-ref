@@ -2,22 +2,25 @@
 
 import getCenterAndPrograms from "@/lib/getCenterAndPrograms";
 import { useCnStore } from "@/store/store";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function CenterName({ element }) {
-  const { openCenterDetailPage, isSelectedCenterData, setIsSelectedCenterData } = useCnStore();
-  console.log("뭔지보자", element);
-  async function clickCenterName() {
-    openCenterDetailPage();
+export default function CenterName({ element, region }) {
+  const { openCenterDetailPage, activeId, setIsSelectedCenterData, setActiveId, setIsSelectedRegion } = useCnStore();
+  async function clickCenterName(e) {
     const fetchCenterDetailData = await getCenterAndPrograms(element.id);
+    setActiveId(element.id);
     setIsSelectedCenterData(fetchCenterDetailData);
+    setIsSelectedRegion(element.region_slug || region);
+    openCenterDetailPage();
   }
 
   return (
     <li
-      className="cursor-pointer text-base hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
-      onClick={() => {
-        clickCenterName();
-        console.log("클릭!");
+      id={element.id}
+      className={`${activeId === element.id ? "bg-hoverbg text-primary" : ""} cursor-pointer text-base hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg`}
+      onClick={(e) => {
+        clickCenterName(e.currentTarget);
       }}
     >
       {element.title || element.name}

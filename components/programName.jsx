@@ -3,20 +3,20 @@
 import { useCnStore } from "@/store/store";
 
 export default function ProgramName({ element }) {
-  const { isProgramDetailPageOpen, openProgramDetailPage, setIsSelectedProgramData, isSelectedProgramData } = useCnStore();
-
+  const { openProgramDetailPage, setIsSelectedRegion, activeId, setActiveId, setIsSelectedProgramData } = useCnStore();
   function clickProgramName() {
-    console.log("아...");
     openProgramDetailPage();
     setIsSelectedProgramData(element);
+    setIsSelectedRegion(element.center_info.center_region);
+    setActiveId(element.program_id);
   }
-
+  
   return (
     <li
       onClick={() => {
         clickProgramName();
       }}
-      className="cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg"
+      className={`cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg ${activeId === element.program_id ? "bg-hoverbg text-primary" : ""}`}
     >
       {element.program_title}
     </li>
