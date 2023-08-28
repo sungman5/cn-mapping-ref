@@ -3,7 +3,7 @@ import { useCnStore } from "@/store/store";
 export default function CenterDetailProgramCard() {
   const { isSelectedCenterData } = useCnStore();
   const programDatas = isSelectedCenterData.referencing_programs;
-console.log(isSelectedCenterData)
+  console.log(isSelectedCenterData);
   return (
     <>
       {programDatas &&
@@ -13,7 +13,7 @@ console.log(isSelectedCenterData)
               <h1 className="mb-4 font-bold">{element.title}</h1>
 
               <div className="text-sm">
-                <div className="flex items-center gap-2 py-2.5 border-b border-b-slate-200">
+                <div className="flex items-start gap-2 py-2.5 border-b border-b-slate-200">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#4238E2" className="w-4 h-4">
                     <path
                       strokeLinecap="round"
@@ -21,7 +21,7 @@ console.log(isSelectedCenterData)
                       d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p className="text-primary">소개</p>
+                  <p className="w-10 text-primary ">소개</p>
                   <p>{element.content}</p>
                 </div>
 
