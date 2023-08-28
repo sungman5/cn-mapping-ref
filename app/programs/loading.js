@@ -1,11 +1,11 @@
 'use client'
 
 import Lottie from "react-lottie-player";
-import loading from "../public/loading.json";
+import loading from "../../public/loading.json";
 
 export default function Loading() {
   return (
-    <div className="flex flex-col items-center w-full mt-8 ">
+    <div className="flex flex-col items-center w-full pb-8 mt-8 ">
       <Lottie loop animationData={loading} play style={{ width: 32, height: 32 }} />
       <div className="mb-8">로딩중입니다.</div>
     </div>

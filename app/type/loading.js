@@ -1,7 +1,7 @@
 'use client'
 
 import Lottie from "react-lottie-player";
-import loading from "../public/loading.json";
+import loading from "../../public/loading.json";
 
 export default function Loading() {
   return (
