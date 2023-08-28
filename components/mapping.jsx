@@ -6,11 +6,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function CnMap() {
-  const { closeCenterDetailPage, setIsSelectedRegion, isSelectedRegion } = useCnStore();
+  const { closeCenterDetailPage, closeProgramDetailPage, setIsSelectedRegion, isSelectedRegion } = useCnStore();
 
   function mapInteraction(region) {
     setIsSelectedRegion(region.id);
     closeCenterDetailPage();
+    closeProgramDetailPage();
   }
 
   useEffect(() => {
