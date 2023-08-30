@@ -24,12 +24,16 @@ export const useCnStore = create((set) => ({
 
 
   // 선택한 지역 
-  isSelectedRegion: '',
+  isSelectedRegion: null,
   setIsSelectedRegion: (value) => set((state) => ({ isSelectedRegion: value })),
-  setIsSelectedRegionInit: (value) => set((state) => ({ isSelectedRegion: '' })),
+  setIsSelectedRegionInit: (value) => set((state) => ({ isSelectedRegion: null })),
 
   // 활성화된 id
   activeId: null,
   setActiveId: (value) => set((state) => ({ activeId: value })),
   setActiveIdInit: (value) => set((state) => ({ activeId: null })),
+
+  // 청소년 인구 수
+  isPopulation: null,
+  setIsPopulation: (value) => set((state) => ({ isPopulation: value })),
 }));

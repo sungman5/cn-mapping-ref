@@ -14,7 +14,7 @@ export default function ClickInfo() {
     });
   }, []);
   return (
-    <div id="click-info"  className="absolute hidden gap-2 px-4 py-2 text-white bg-black rounded-full shadow-sm xl:flex top-8 right-8">
+    <div id="click-info"  className="absolute hidden gap-2 px-3 py-2 text-black border-2 border-black rounded-full xl:flex top-8 right-8">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
         <path
           strokeLinecap="round"

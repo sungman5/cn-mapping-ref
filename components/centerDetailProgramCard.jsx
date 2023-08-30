@@ -3,7 +3,6 @@ import { useCnStore } from "@/store/store";
 export default function CenterDetailProgramCard() {
   const { isSelectedCenterData } = useCnStore();
   const programDatas = isSelectedCenterData.referencing_programs;
-  console.log(isSelectedCenterData);
   return (
     <>
       {programDatas &&

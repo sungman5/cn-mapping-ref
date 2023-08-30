@@ -23,10 +23,10 @@ export default function CenterDetailPage() {
         </div>
 
         <div className="flex flex-col flex-1 gap-6 p-8 bg-white">
-          <div>
+          {/* <div>
             <p className="mb-1 font-bold tracking-normal font-NotoSansKR">소개</p>
             <p>{isSelectedCenterData.content || "-"}</p>
-          </div>
+          </div> */}
           <div>
             <p className="mb-1 font-bold tracking-normal font-NotoSansKR">주소</p>
             <p>{isSelectedCenterData.center_address || "-"}</p>
