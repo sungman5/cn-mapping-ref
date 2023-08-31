@@ -6,13 +6,14 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function CenterName({ element, region }) {
-  const { openCenterDetailPage, activeId, setIsSelectedCenterData, setActiveId, setIsSelectedRegion } = useCnStore();
+  const { openCenterDetailPage, activeId, setIsSelectedCenterData, setActiveId, setIsSelectedProgramFilterInit, setIsSelectedRegion } = useCnStore();
   async function clickCenterName(e) {
     const fetchCenterDetailData = await getCenterAndPrograms(element.id);
     setActiveId(element.id);
     setIsSelectedCenterData(fetchCenterDetailData);
     setIsSelectedRegion(element.region_slug || region);
     openCenterDetailPage();
+    setIsSelectedProgramFilterInit();
   }
 
   return (

@@ -5,7 +5,18 @@ import CenterDetailProgramCard from "./centerDetailProgramCard";
 import { useCnStore } from "@/store/store";
 
 export default function CenterDetailPage() {
-  const { isCenterDetailOpen, closeCenterDetailPage, isSelectedCenterData } = useCnStore();
+  const { isCenterDetailOpen, closeCenterDetailPage, isSelectedProgramFilter, setIsSelectedProgramFilter, isSelectedCenterData, isFilterProgramDatas } = useCnStore();
+
+  function seclectProgramFilter(e) {
+    setIsSelectedProgramFilter(e.id);
+  }
+  const programDatas = isSelectedCenterData?.referencing_programs;
+  const programCourseArray = Array.isArray(programDatas) ? programDatas.map((element) => element.meta.program_course) : [];
+  const uniqueProgramCourseArray = [...new Set(programCourseArray)];
+
+  console.log("->>", uniqueProgramCourseArray);
+
+  console.log("선택된코스!", isSelectedProgramFilter);
 
   return (
     <div className={`${isCenterDetailOpen === false ? "hidden" : "flex xl:flex-row"} flex-col w-full text-sm 3xl:text-base xl:w-[640px] 4xl:w-[768px] bg-componentBg`}>
@@ -23,10 +34,6 @@ export default function CenterDetailPage() {
         </div>
 
         <div className="flex flex-col flex-1 gap-6 p-8 bg-white">
-          {/* <div>
-            <p className="mb-1 font-bold tracking-normal font-NotoSansKR">소개</p>
-            <p>{isSelectedCenterData.content || "-"}</p>
-          </div> */}
           <div>
             <p className="mb-1 font-bold tracking-normal font-NotoSansKR">주소</p>
             <p>{isSelectedCenterData.center_address || "-"}</p>
@@ -45,7 +52,7 @@ export default function CenterDetailPage() {
               target="_blank"
               className={`${
                 isSelectedCenterData.center_website
-                  ? "border-defaultBlack text-defaultBlack cursor-pointer hover:text-primary hover:border-primary"
+                  ? "border-defaultBlack text-defaultBlack cursor-pointer  hover:text-primary hover:border-primary"
                   : "border-slate-200 text-slate-400 cursor-not-allowed"
               } flex items-center justify-center flex-1 gap-1 py-1.5 text-sm border rounded-full `}
             >
@@ -94,6 +101,58 @@ export default function CenterDetailPage() {
           </div>
           <p className="text-xs">총 {isSelectedCenterData.referencing_programs_count}개의 프로그램</p>
         </div>
+        <div className="sticky w-full p-3 overflow-y-auto text-center bg-white border-b border-b-slate-200 top-16 ">
+          <ul className="flex flex-wrap gap-1 text-sm">
+            <li
+              onClick={(e) => {
+                seclectProgramFilter(e.currentTarget);
+              }}
+              id={"course_all"}
+              className={`${
+                isSelectedProgramFilter === "course_all" ? "bg-primary text-white border-primary" : "border-slate-200"
+              } px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary }`}
+            >
+              모두
+            </li>
+            {uniqueProgramCourseArray.map((element) => {
+              const courseName = {
+                course_lang: "국어",
+                course_math: "수학",
+                course_eng: "영어",
+                course_ethical: "사회과/도덕",
+                course_science: "과학과",
+                course_art: "예체능",
+                course_skill: "기술가정/정보",
+                course_second_lang: "제2외국어",
+                course_expert: "전문교과",
+                course_freeactive: "자율활동",
+                course_party: "동아리활동",
+                course_service: "봉사활동",
+                course_step: "진로활동",
+                course_free: "자유학기제/자유학년제",
+                course_point: "고교학점제",
+                course_etc: "기타",
+              };
+
+              return (
+                <>
+                  <li
+                    key={element}
+                    onClick={(e) => {
+                      seclectProgramFilter(e.currentTarget);
+                    }}
+                    id={element}
+                    className={`${
+                      isSelectedProgramFilter === element ? "bg-primary text-white border-primary" : "border-slate-200"
+                    } px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary }`}
+                  >
+                    {courseName[element]}
+                  </li>
+                </>
+              );
+            })}
+          </ul>
+        </div>
 
         <div className="flex flex-col gap-2 p-2.5">
           {isSelectedCenterData.referencing_programs_count === 0 ? (
@@ -108,7 +167,9 @@ export default function CenterDetailPage() {
               <p>프로그램이 없습니다.</p>
             </div>
           ) : (
-            <CenterDetailProgramCard />
+            <>
+              <CenterDetailProgramCard />
+            </>
           )}
         </div>
       </section>

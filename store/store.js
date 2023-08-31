@@ -36,4 +36,13 @@ export const useCnStore = create((set) => ({
   // 청소년 인구 수
   isPopulation: null,
   setIsPopulation: (value) => set((state) => ({ isPopulation: value })),
+
+  // 선택한 프로그램 필터
+  isSelectedProgramFilter : 'course_all',
+  setIsSelectedProgramFilter: (value) => set((state) => ({ isSelectedProgramFilter: value })),
+  setIsSelectedProgramFilterInit: (value) => set((state) => ({ isSelectedProgramFilter: 'course_all' })),
+
+  // 필터데이터
+  isFilterProgramDatas : [],
+  setIsFilterProgramDatas : (value) => set((state) => ({ isFilterProgramDatas: value })),
 }));
