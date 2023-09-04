@@ -20,10 +20,10 @@ export default function Header() {
           }}
           href={"/"}
         >
-          <Image className="w-20" height={15} width={48} alt="디디다: 충청남도 청소년활동자원맵" src={"/didida-logo.svg"} />
+          <Image className="w-64" height={15} width={48} alt="디디다: 충청남도 청소년활동자원맵" src={"/didida-logo.svg"} />
         </Link>
       </h1>
-      <Image src={"/cn-brand-logo.svg"} className="hidden h-8 xl:block w-36" width={214} height={48} alt="브랜드로고" />
+      <Image src={"/cn-pass-logo.svg"} className="hidden h-8 w-72 xl:block" width={214} height={48} alt="브랜드로고" />
     </header>
   );
 }

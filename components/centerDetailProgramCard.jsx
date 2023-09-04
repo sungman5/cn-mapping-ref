@@ -13,13 +13,11 @@ export default function CenterDetailProgramCard() {
     });
   }
 
-  console.log("필터데이터?", filterProgramDatas);
-
   useEffect(() => {
     setIsFilterProgramDatas(filterProgramDatas);
   }, [isSelectedProgramFilter]);
 
-  console.log(isFilterProgramDatas);
+  // console.log(isFilterProgramDatas);
 
   return (
     <>

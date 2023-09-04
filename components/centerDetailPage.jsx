@@ -14,10 +14,6 @@ export default function CenterDetailPage() {
   const programCourseArray = Array.isArray(programDatas) ? programDatas.map((element) => element.meta.program_course) : [];
   const uniqueProgramCourseArray = [...new Set(programCourseArray)];
 
-  console.log("->>", uniqueProgramCourseArray);
-
-  console.log("선택된코스!", isSelectedProgramFilter);
-
   return (
     <div className={`${isCenterDetailOpen === false ? "hidden" : "flex xl:flex-row"} flex-col w-full text-sm 3xl:text-base xl:w-[640px] 4xl:w-[768px] bg-componentBg`}>
       <section className="flex flex-col border-r xl:flex-1 h-fit xl:h-full border-r-slate-200">

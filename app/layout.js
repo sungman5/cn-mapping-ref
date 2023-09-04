@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="ko" className="h-screen text-sm xl:text-base font-NanumSquareRound text-defaultBlack">
       <body className="flex flex-col h-screen tracking-tighter ">
         <Header />
-        <div className="flex flex-col-reverse xl:h-full pb-[67.5px] xl:pb-0 xl:flex-row xl:flex-1 pt-[69px] xl:pt-[78px]">
+        <div className="flex flex-col-reverse xl:h-full pb-[67.5px] xl:pb-0 xl:flex-row xl:flex-1 pt-[67px] xl:pt-[68.78px]">
           <NavBar />
           <section className="w-full overflow-y-auto bg-white border-r xl:shadow-lg xl:w-80 2xl:w-80 3xl:w-96 border-r-slate-200">{children}</section>
           {/* 프로그램 상세 목록 컴포넌트 */}
