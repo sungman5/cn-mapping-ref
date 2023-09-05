@@ -1,3 +1,4 @@
+import AllProgramLength from "@/components/allProgramLength";
 import ProgramName from "@/components/programName";
 import ProgramPageFilter from "@/components/programPageFilter";
 import Search from "@/components/search";
@@ -18,12 +19,12 @@ export default async function Programs() {
       <div className="sticky top-0 p-8 bg-white border-b">
         <div className="flex items-center justify-between mb-4 ">
           <h2>모든 프로그램</h2>
-          <p className="text-xs">총 {programData.length}개의 프로그램</p>
+          <AllProgramLength programData={programData} />
         </div>
         <ProgramPageFilter programData={programData} programCourseList={programCourseList} />
       </div>
       <ul className="p-4 overflow-y-auto bg-white component-width">
-        <Search />
+        <Search programData={programData} />
         <ProgramName programData={programData} />
       </ul>
     </main>

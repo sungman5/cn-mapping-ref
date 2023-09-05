@@ -12,6 +12,10 @@ export const useCnStore = create((set) => ({
   isSelectedCenterData: {},
   setIsSelectedCenterData: (value) => set((state) => ({ isSelectedCenterData: value })),
 
+  isCenterSearchResult : [],
+  setIsCenterSearchResult : (value) => set((state) => ({ isCenterSearchResult: value })),
+  setIsCenterSearchResultInit : (value) => set((state) => ({ isCenterSearchResult: [] })),
+
 
   // 프로그램창 여닫기 상태관리
   isProgramDetailPageOpen : false,
@@ -49,4 +53,10 @@ export const useCnStore = create((set) => ({
   // 프로그램 페이지 필터데이터
   isFilterProgramDatasSecond : [],
   setIsFilterProgramDatasSecond : (value) => set((state) => ({ isFilterProgramDatasSecond: value })),
+  setIsFilterProgramDatasSecondInit : (value) => set((state) => ({ isFilterProgramDatasSecond: [] })),
+
+  // 검색창 value 값
+  isSearchValue : '',
+  setIsSearchValue : (value) => set((state) => ({ isSearchValue: value })),
+  setIsSearchValueInit : (value) => set((state) => ({ isSearchValue: '' })),
 }));

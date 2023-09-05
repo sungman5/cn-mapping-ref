@@ -13,10 +13,8 @@ export default async function AllCenterList() {
       </div>
 
       <ul className="p-4 bg-white xl:overflow-y-auto hide-scrollbar component-width">
-        <Search />
-        {centerList.map((element) => {
-          return <CenterName element={element} key={element.id} />;
-        })}
+        <Search centerList={centerList} />
+        <CenterName centerList={centerList} key={centerList.id} />        
       </ul>
     </main>
   );
