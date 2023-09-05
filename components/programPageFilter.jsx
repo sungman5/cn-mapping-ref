@@ -4,13 +4,15 @@ import { useCnStore } from "@/store/store";
 import { useEffect } from "react";
 
 export default function ProgramPageFilter({ programCourseList, programData }) {
-  const { isSelectedProgramFilter, setIsSelectedProgramFilter, setIsFilterProgramDatasSecond, isFilterProgramDatasSecond } = useCnStore();
+  const { isSelectedProgramFilter, setIsSelectedProgramFilter, closeProgramDetailPage, setIsFilterProgramDatasSecond, setIsSelectedRegionInit, isFilterProgramDatasSecond } = useCnStore();
   let filterProgramDatas = [];
 
   // console.log('프로그램페이지의 programData:', programData)
 
   function clickFilter(e) {
     setIsSelectedProgramFilter(e.id);
+    setIsSelectedRegionInit();
+    closeProgramDetailPage();
   }
 
   if (programData) {

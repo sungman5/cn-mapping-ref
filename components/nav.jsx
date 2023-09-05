@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function NavBar() {
-  const { closeCenterDetailPage, closeProgramDetailPage, setIsSelectedRegionInit, setActiveIdInit } = useCnStore();
+  const { closeCenterDetailPage, closeProgramDetailPage, setIsSelectedProgramFilterInit, setIsSelectedRegionInit, setActiveIdInit } = useCnStore();
   const getPathname = usePathname();
   const pathname = getPathname.split("/")[1];
 
@@ -15,6 +15,7 @@ export default function NavBar() {
     closeProgramDetailPage();
     setActiveIdInit();
     setIsSelectedRegionInit();
+    setIsSelectedProgramFilterInit();
   }
 
   return (

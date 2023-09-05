@@ -4,17 +4,23 @@ import { useCnStore } from "@/store/store";
 import Link from "next/link";
 
 export default function ProgramDetailPage() {
-  const { isProgramDetailPageOpen, closeProgramDetailPage, isSelectedProgramData } = useCnStore();
+  const { isProgramDetailPageOpen, closeProgramDetailPage, isSelectedProgramData, setActiveIdInit, setIsSelectedRegionInit } = useCnStore();
   
   const meta = isSelectedProgramData.program_metadata;
   const center = isSelectedProgramData.center_info;
   // console.log("프로그램데이터", isSelectedProgramData);
+
+  function clickProgramTitle() {
+    closeProgramDetailPage();
+    setActiveIdInit();
+    setIsSelectedRegionInit();
+  }
   return (
     <div className={`${isProgramDetailPageOpen === false ? "hidden" : "flex xl:flex-row"} h-full flex-col w-96 bg-componentBg`}>
       <section className="flex flex-col flex-1 h-full border-r border-r-slate-200">
         <div
           onClick={() => {
-            closeProgramDetailPage();
+            clickProgramTitle()
           }}
           className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary xl:h-16 border-b-slate-200"
         >
