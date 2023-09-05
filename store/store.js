@@ -45,4 +45,8 @@ export const useCnStore = create((set) => ({
   // 필터데이터
   isFilterProgramDatas : [],
   setIsFilterProgramDatas : (value) => set((state) => ({ isFilterProgramDatas: value })),
+  
+  // 프로그램 페이지 필터데이터
+  isFilterProgramDatasSecond : [],
+  setIsFilterProgramDatasSecond : (value) => set((state) => ({ isFilterProgramDatasSecond: value })),
 }));

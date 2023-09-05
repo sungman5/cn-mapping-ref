@@ -1,4 +1,5 @@
 import CenterName from "@/components/centerName";
+import Search from "@/components/search";
 import getAllCenterList from "@/lib/getAllCenterList";
 
 export default async function AllCenterList() {
@@ -12,6 +13,7 @@ export default async function AllCenterList() {
       </div>
 
       <ul className="p-4 bg-white xl:overflow-y-auto hide-scrollbar component-width">
+        <Search />
         {centerList.map((element) => {
           return <CenterName element={element} key={element.id} />;
         })}
