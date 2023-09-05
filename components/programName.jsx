@@ -24,24 +24,28 @@ export default function ProgramName({ programData }) {
   }, [isSelectedProgramData]);
 
   function clickProgramName(e) {
-    setActiveId(e.id);
+    const currentId = parseInt(e.id, 10);  // id를 숫자로 변환
+    setActiveId(currentId);
   }
+  
+  
 
   return (
     <>
       {isFilterProgramDatasSecond.length === 0 || isFilterProgramDatasSecond === "course_all"
         ? programData &&
           programData.map((element) => {
+            console.log(typeof activeId, typeof element.program_id)
             return (
               <li
-                id={element.program_id}
-                key={element.program_id}
-                onClick={(e) => {
-                  clickProgramName(e.currentTarget);
-                }}
-                className={`cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg ${activeId === element.program_id ? "bg-hoverbg text-primary" : ""}`}
-              >
-                {element.program_title}
+              id={element.program_id}
+              key={element.program_id}
+              onClick={(e) => {
+                clickProgramName(e.currentTarget);
+              }}
+              className={`cursor-pointer hover:text-primary px-4 py-2.5 rounded hover:bg-hoverbg ${activeId === element.program_id ? "bg-hoverbg text-primary" : ""}`}
+              >                
+              {element.program_title}
               </li>
             );
           })
