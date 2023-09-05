@@ -6,12 +6,7 @@ import GetAllPrograms from "@/lib/getAllPrograms";
 
 export default async function Programs() {
   const programData = await GetAllPrograms();
-  // console.log('프로그램 차일드페이지의:', programData)
-
   const programCourseList = Array.from(new Set(programData.map((p) => p.program_metadata.program_course)));
-  // console.log(programCourseList);
-
-  // console.log("ㅇ", programsByCourse);
 
   return (
     <main className="w-full bg-componentBg">

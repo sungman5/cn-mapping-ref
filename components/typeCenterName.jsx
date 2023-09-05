@@ -4,14 +4,8 @@ import getCenterAndPrograms from "@/lib/getCenterAndPrograms";
 import { useCnStore } from "@/store/store";
 import { useEffect } from "react";
 
-export default function RegionCenterName({ regionCenterList, region }) {
+export default function TypeCenterName({ typeCenterList, region }) {
   const { openCenterDetailPage, isSelectedCenterData, setActiveId, setIsSelectedRegion, activeId, setIsSelectedCenterData } = useCnStore();
-
-  // async function clickCenterName(e) {
-  //   openCenterDetailPage();
-  //   const fetchCenterDetailData = await getCenterAndPrograms(e.id);
-  //   setIsSelectedCenterData(fetchCenterDetailData);
-  // }
   useEffect(() => {
     if (activeId !== null) {
       async function fetchData() {
@@ -19,6 +13,7 @@ export default function RegionCenterName({ regionCenterList, region }) {
         openCenterDetailPage();
         setIsSelectedCenterData(fetchCenterDetailData);
         setIsSelectedRegion(fetchCenterDetailData.region_slug || region);
+        console.log(fetchCenterDetailData);
       }
       fetchData();
     }
@@ -30,8 +25,8 @@ export default function RegionCenterName({ regionCenterList, region }) {
   }
 
   return (
-    <>
-      {regionCenterList.map((element) => {
+    <ul>
+      {typeCenterList.map((element) => {
         return (
           <li
             key={element.id}
@@ -46,6 +41,6 @@ export default function RegionCenterName({ regionCenterList, region }) {
           </li>
         );
       })}
-    </>
+    </ul>
   );
 }

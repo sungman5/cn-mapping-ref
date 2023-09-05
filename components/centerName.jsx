@@ -5,7 +5,7 @@ import { useCnStore } from "@/store/store";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function CenterName({ centerList, region }) {
+export default function CenterName({ centerList, region, element }) {
   const {
     openCenterDetailPage,
     activeId,
@@ -16,7 +16,6 @@ export default function CenterName({ centerList, region }) {
     setIsSelectedProgramFilterInit,
     setIsSelectedRegion,
   } = useCnStore();
-
   // async function clickCenterName(e) {
   //   const fetchCenterDetailData = await getCenterAndPrograms(e.id);
   //   setActiveId(e.id);
@@ -33,7 +32,6 @@ export default function CenterName({ centerList, region }) {
         openCenterDetailPage();
         setIsSelectedCenterData(fetchCenterDetailData);
         setIsSelectedRegion(fetchCenterDetailData.region_slug || region);
-        console.log(fetchCenterDetailData)
       }
       fetchData();
     }
@@ -43,7 +41,6 @@ export default function CenterName({ centerList, region }) {
     const currentId = parseInt(e.id, 10); // id를 숫자로 변환
     setActiveId(currentId);
   }
-  // console.log("새로운배열!", isCenterSearchResult);
   return (
     <>
       {isCenterSearchResult.map((element) => {

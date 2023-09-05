@@ -5,7 +5,6 @@ export default function CenterDetailProgramCard() {
   const { isSelectedCenterData, isSelectedProgramFilter, setIsFilterProgramDatas, isFilterProgramDatas } = useCnStore();
   const programDatas = isSelectedCenterData.referencing_programs;
   let filterProgramDatas = [];
-  // console.log('programDatas', programDatas)
 
   if (programDatas) {
     filterProgramDatas = programDatas.filter((element) => {
@@ -16,8 +15,6 @@ export default function CenterDetailProgramCard() {
   useEffect(() => {
     setIsFilterProgramDatas(filterProgramDatas);
   }, [isSelectedProgramFilter]);
-
-  // console.log(isFilterProgramDatas);
 
   return (
     <>

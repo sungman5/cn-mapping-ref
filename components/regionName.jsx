@@ -4,7 +4,7 @@ import { useCnStore } from "@/store/store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function RegionName({ element }) {
+export default function RegionName({ element, region}) {
   const getPathname = usePathname();
   const pathname = getPathname.split("/")[2];
   const { setIsSelectedRegion } = useCnStore();

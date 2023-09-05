@@ -39,7 +39,6 @@ export default function MainStatistic() {
 
   const getPathname = usePathname();
   const pathname = getPathname.split("/")[2];
-  // console.log(pathname);
 
   return (
     <div className={`xl:flex xl:flex-col 3xl:flex-row hidden absolute gap-2 bottom-8 right-8`}>

@@ -8,7 +8,6 @@ export default function ProgramDetailPage() {
   
   const meta = isSelectedProgramData.program_metadata;
   const center = isSelectedProgramData.center_info;
-  // console.log("프로그램데이터", isSelectedProgramData);
 
   function clickProgramTitle() {
     closeProgramDetailPage();

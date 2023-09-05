@@ -22,7 +22,6 @@ export default async function RegionLayout(props) {
     12: 14,
     15: 15,
   };
-  // console.log(regionNameData);
 
   const sortedRegionNameData = regionNameData.sort((a, b) => {
     return sortRegionOrder[a.id] - sortRegionOrder[b.id];

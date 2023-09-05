@@ -9,7 +9,6 @@ export default function Search({ programData, centerList }) {
     const newValue = e.value;
     setIsSearchValue(newValue);
     setIsSelectedProgramFilterInit();
-    // console.log(newValue); // 이제 새로운 값을 로그로 출력합니다.
   }
 
   useEffect(() => {

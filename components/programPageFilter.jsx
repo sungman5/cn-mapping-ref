@@ -7,8 +7,6 @@ export default function ProgramPageFilter({ programCourseList, programData }) {
   const { isSelectedProgramFilter, setActiveIdInit, setIsSelectedProgramFilter, closeProgramDetailPage, setIsSearchValueInit, setIsFilterProgramDatasSecond, setIsSelectedRegionInit, isFilterProgramDatasSecond } = useCnStore();
   let filterProgramDatas = [];
 
-  // console.log('프로그램페이지의 programData:', programData)
-
   function clickFilter(e) {
     setIsSearchValueInit();
     setIsSelectedProgramFilter(e.id);
