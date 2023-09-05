@@ -5,7 +5,7 @@ import CenterDetailProgramCard from "./centerDetailProgramCard";
 import { useCnStore } from "@/store/store";
 
 export default function CenterDetailPage() {
-  const { isCenterDetailOpen, closeCenterDetailPage, isSelectedProgramFilter, setIsSelectedProgramFilter, isSelectedCenterData, isFilterProgramDatas } = useCnStore();
+  const { isCenterDetailOpen, closeCenterDetailPage, setActiveIdInit, setIsSelectedRegionInit, isSelectedProgramFilter, setIsSelectedProgramFilter, isSelectedCenterData, isFilterProgramDatas } = useCnStore();
 
   function seclectProgramFilter(e) {
     setIsSelectedProgramFilter(e.id);
@@ -14,12 +14,18 @@ export default function CenterDetailPage() {
   const programCourseArray = Array.isArray(programDatas) ? programDatas.map((element) => element.meta.program_course) : [];
   const uniqueProgramCourseArray = [...new Set(programCourseArray)];
 
+  function clickOpenedCenterName(){
+    closeCenterDetailPage();
+    setActiveIdInit();
+    setIsSelectedRegionInit();;
+  }
+
   return (
     <div className={`${isCenterDetailOpen === false ? "hidden" : "flex xl:flex-row"} flex-col w-full text-sm 3xl:text-base xl:w-[640px] 4xl:w-[768px] bg-componentBg`}>
       <section className="flex flex-col border-r xl:flex-1 h-fit xl:h-full border-r-slate-200">
         <div
           onClick={() => {
-            closeCenterDetailPage();
+            clickOpenedCenterName();
           }}
           className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary xl:h-16 border-b-slate-200"
         >
