@@ -44,7 +44,15 @@ export default function ProgramPageFilter({ programCourseList, programData }) {
 
   return (
     <ul className="flex flex-wrap gap-1 text-sm">
-      <li id={`course_all`} onClick={(e)=>{clickFilter(e.currentTarget)}} className={`px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary `}>모두</li>
+      <li
+        id={`course_all`}
+        onClick={(e) => {
+          clickFilter(e.currentTarget);
+        }}
+        className={`${isSelectedProgramFilter === 'course_all' ? 'text-white bg-primary':''} px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary `}
+      >
+        모두
+      </li>
       {programCourseList.map((element) => {
         return (
           <li
@@ -53,7 +61,7 @@ export default function ProgramPageFilter({ programCourseList, programData }) {
               clickFilter(e.currentTarget);
             }}
             key={element}
-            className={`px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary `}
+            className={`${isSelectedProgramFilter === element ? 'text-white bg-primary':''} px-2 py-1 border rounded cursor-pointer hover:border hover:border-primary hover:text-white hover:bg-primary `}
           >
             {courseName[element]}
           </li>

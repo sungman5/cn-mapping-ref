@@ -32,7 +32,6 @@ export default function ProgramName({ programData }) {
       {isFilterProgramDatasSecond.length === 0 || isFilterProgramDatasSecond === "course_all"
         ? programData &&
           programData.map((element) => {
-            // console.log(",,", element.program_id);
             return (
               <li
                 id={element.program_id}
