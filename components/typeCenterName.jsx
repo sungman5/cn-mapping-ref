@@ -13,7 +13,6 @@ export default function TypeCenterName({ typeCenterList, region }) {
         openCenterDetailPage();
         setIsSelectedCenterData(fetchCenterDetailData);
         setIsSelectedRegion(fetchCenterDetailData.region_slug || region);
-        console.log(fetchCenterDetailData);
       }
       fetchData();
     }
