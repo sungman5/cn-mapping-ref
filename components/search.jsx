@@ -1,10 +1,13 @@
 "use client";
 
 import { useCnStore } from "@/store/store";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Search({ programData, centerList }) {
   const { isFilterProgramDatasSecond, setIsFilterProgramDatasSecond, setIsCenterSearchResult, setIsSelectedProgramFilterInit, isSearchValue, setIsSearchValue } = useCnStore();
+  const pathname = usePathname();
+  console.log(pathname)
   function changeSearchValue(e) {
     const newValue = e.value;
     setIsSearchValue(newValue);
@@ -35,7 +38,7 @@ export default function Search({ programData, centerList }) {
       </svg>
       <input
         type="text"
-        placeholder="프로그램을 검색해보세요"
+        placeholder={`${pathname === '/all-center-list' ? '시설을 검색해보세요' : '프로그램을 검색해보세요'}`}
         className="w-full h-8 text-sm border-b focus:outline-none"
         value={isSearchValue}
         onChange={(e) => {
