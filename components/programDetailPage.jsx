@@ -5,11 +5,12 @@ import Link from "next/link";
 
 export default function ProgramDetailPage() {
   const { isProgramDetailPageOpen, closeProgramDetailPage, isSelectedProgramData, setActiveIdInit, setIsSelectedRegionInit } = useCnStore();
-  
+
   const meta = isSelectedProgramData.program_metadata;
   const center = isSelectedProgramData.center_info;
-
+  
   function clickProgramTitle() {
+    console.log('프로그램 디테일 페이지', isSelectedProgramData.program_metadata)
     closeProgramDetailPage();
     setActiveIdInit();
     setIsSelectedRegionInit();
@@ -19,7 +20,7 @@ export default function ProgramDetailPage() {
       <section className="flex flex-col flex-1 h-full border-r border-r-slate-200">
         <div
           onClick={() => {
-            clickProgramTitle()
+            clickProgramTitle();
           }}
           className="flex items-center justify-start h-12 gap-2 px-4 bg-white border-b cursor-pointer hover:text-primary xl:h-16 border-b-slate-200"
         >
@@ -68,7 +69,11 @@ export default function ProgramDetailPage() {
               </svg>
               <p className="font-bold tracking-normal text-primary">대상</p>
             </div>
-            <p>{(isProgramDetailPageOpen && meta.program_target) || "-"}</p>
+            <p>
+              {isProgramDetailPageOpen && Array.isArray(isSelectedProgramData.program_target) && isSelectedProgramData.program_target.length > 0
+                ? isSelectedProgramData.program_target.join(", ")
+                : "-"}
+            </p>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">

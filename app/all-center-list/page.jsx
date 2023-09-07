@@ -4,6 +4,7 @@ import getAllCenterList from "@/lib/getAllCenterList";
 
 export default async function AllCenterList() {
   const centerList = await getAllCenterList();
+  // console.log('모든센터리스트:',centerList)
 
   return (
     <main className="w-full bg-componentBg">

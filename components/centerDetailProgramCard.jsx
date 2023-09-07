@@ -5,7 +5,7 @@ export default function CenterDetailProgramCard() {
   const { isSelectedCenterData, isSelectedProgramFilter, setIsFilterProgramDatas, isFilterProgramDatas } = useCnStore();
   const programDatas = isSelectedCenterData.referencing_programs;
   let filterProgramDatas = [];
-
+  console.log('???', programDatas)
   if (programDatas) {
     filterProgramDatas = programDatas.filter((element) => {
       return element.meta.program_course === isSelectedProgramFilter;
@@ -21,6 +21,7 @@ export default function CenterDetailProgramCard() {
       {filterProgramDatas.length === 0 || isSelectedProgramFilter === "course_all"
         ? programDatas &&
           programDatas.map((element) => {
+            
             const courseName = {
               course_lang: "국어",
               course_math: "수학",
@@ -39,6 +40,7 @@ export default function CenterDetailProgramCard() {
               course_point: "고교학점제",
               course_etc: "기타",
             };
+            
             return (
               <div key={element.id} className="p-8 overflow-y-auto bg-white rounded">
                 <h1 className="mb-4 font-bold">{element.title}</h1>
@@ -79,7 +81,7 @@ export default function CenterDetailProgramCard() {
                     </svg>
 
                     <p className="text-primary">대상</p>
-                    <p>{element.meta.program_target}</p>
+                    <p>{element.program_target_terms.join(", ")}</p>
                   </div>
 
                   <div className="flex items-center gap-2 py-2.5 border-b border-b-slate-200">

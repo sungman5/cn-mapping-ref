@@ -16,19 +16,12 @@ export default function CenterName({ centerList, region, element }) {
     setIsSelectedProgramFilterInit,
     setIsSelectedRegion,
   } = useCnStore();
-  // async function clickCenterName(e) {
-  //   const fetchCenterDetailData = await getCenterAndPrograms(e.id);
-  //   setActiveId(e.id);
-  //   setIsSelectedCenterData(fetchCenterDetailData);
-  //   setIsSelectedRegion(centerList.region_slug || region);
-  //   openCenterDetailPage();
-  //   setIsSelectedProgramFilterInit();
-  // }
 
   useEffect(() => {
     if (activeId !== null) {
       async function fetchData() {
         const fetchCenterDetailData = await getCenterAndPrograms(activeId); // 'e.id' 대신 'activeId'를 사용
+        // console.log('모든시설 센터이름 클릭시->',fetchCenterDetailData)
         openCenterDetailPage();
         setIsSelectedCenterData(fetchCenterDetailData);
         setIsSelectedRegion(fetchCenterDetailData.region_slug || region);
