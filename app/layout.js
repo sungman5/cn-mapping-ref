@@ -8,6 +8,7 @@ import ProgramDetailPage from "@/components/programDetailPage";
 import CnMap from "@/components/mapping";
 import ClickInfo from "@/components/clickInfo";
 import MainStatistic from "@/components/mainStatistic";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "디디다:충청남도 청소년활동자원맵",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </div>
+        <Analytics/>
       </body>
     </html>
   );
